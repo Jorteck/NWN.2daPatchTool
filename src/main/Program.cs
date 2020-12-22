@@ -2,7 +2,7 @@
 using System.IO;
 using CommandLine;
 
-namespace TwoDimArrayPatcher
+namespace TwoDimArrayPatchTool
 {
   public static class Program
   {

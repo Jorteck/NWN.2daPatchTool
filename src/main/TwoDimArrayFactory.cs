@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using CsvHelper;
 
-namespace TwoDimArrayPatcher
+namespace TwoDimArrayPatchTool
 {
   public static class TwoDimArrayFactory
   {

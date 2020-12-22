@@ -4,11 +4,16 @@ using System.Globalization;
 using System.Linq;
 using CsvHelper;
 
-namespace TwoDimArrayPatcher
+namespace TwoDimArrayPatchTool
 {
   public class Patcher
   {
     private readonly CLIOptions options;
+
+    private const string PatchCommand = "PATCH_CMD";
+    private const string PatchRowIndex = "PATCH_IDX";
+
+    private static readonly string[] PatchColumns = {PatchCommand, PatchRowIndex};
 
     public Patcher(CLIOptions options)
     {
@@ -33,8 +38,8 @@ namespace TwoDimArrayPatcher
     {
       foreach (TwoDimArrayEntry entry in patch.Entries)
       {
-        string command = (string)entry.Values["PATCH"];
-        int index = Convert.ToInt32(entry.Values["ID"]);
+        string command = (string)entry.Values[PatchCommand];
+        int index = Convert.ToInt32(entry.Values[PatchRowIndex]);
 
         switch (command.ToUpperInvariant())
         {
@@ -81,8 +86,10 @@ namespace TwoDimArrayPatcher
         }
       }
 
-      entryToAdd.Values.Remove("ID");
-      entryToAdd.Values.Remove("PATCH");
+      foreach (string column in PatchColumns)
+      {
+        entryToAdd.Values.Remove(column);
+      }
       source.Entries.Add(entryToAdd);
     }
 
@@ -90,7 +97,7 @@ namespace TwoDimArrayPatcher
     {
       foreach (KeyValuePair<string,object> entry in patch.Values)
       {
-        if (entry.Key == "PATCH" || entry.Key == "ID")
+        if (PatchColumns.Contains(entry.Key))
         {
           continue;
         }

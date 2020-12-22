@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CommandLine;
 
-namespace TwoDimArrayPatcher
+namespace TwoDimArrayPatchTool
 {
   public class CLIOptions
   {

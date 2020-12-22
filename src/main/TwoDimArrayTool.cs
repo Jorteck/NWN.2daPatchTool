@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
-namespace TwoDimArrayPatcher
+namespace TwoDimArrayPatchTool
 {
   public class TwoDimArrayTool
   {

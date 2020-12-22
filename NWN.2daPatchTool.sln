@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimArrayPatcher", "TwoDimArrayPatcher.csproj", "{FE2DC502-F6E4-45CD-B984-50F913216323}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWN.2daPatchTool", "NWN.2daPatchTool.csproj", "{FE2DC502-F6E4-45CD-B984-50F913216323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
